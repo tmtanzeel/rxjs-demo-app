@@ -1,0 +1,38 @@
+<div class="my-3 mx-4">
+  <h2>Custom Observable</h2>
+  <br>
+
+  <div class="row">
+      <div class="col-md-6">
+          <strong>Ex - 01 (Manual)</strong>
+          <hr>
+          <ul [ngClass]="techStatus =='completed'? 'completed' : techStatus =='error'? 'error' : ''"
+          class="techList" id="elContainer"></ul>
+      </div>
+      <div class="col-md-6">
+          <strong>Ex - 02 (Custom Interval Observable)</strong>
+          <hr>
+          <ul [ngClass]="techStatus2 =='completed'? 'completed' : techStatus2 =='error'? 'error' : ''"
+          class="techList" id="elContainer2"></ul>
+      </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-md-12">
+          <br>
+          <strong>Ex - 03 (Names)</strong>
+          <br>
+          <br>
+          <p class="bg-light py-2 px-3 border rounded">
+              <strong>Random Names: </strong> 
+              'Anup', 'Shekhar', 'Sharma','Uxtrendz', 'John', 'Alex', 'Robert'
+          </p> 
+          <hr>
+          <p>Current Name : <strong>{{names}}</strong></p>
+          <span class="badge badge-primary">Primary</span>
+          <span class="badge"
+          [ngClass]="nameStatus =='completed'? 'badge-success' : nameStatus =='error' ? 'badge-danger' : 'badge-primary'"
+          >{{nameStatus =='completed'? 'Success' : nameStatus =='error' ? 'Error' : 'Running'}}</span>
+      </div>
+  </div>
+</div>
