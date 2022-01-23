@@ -27,7 +27,7 @@ export class TapComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Ex 01
+    // Ex 01 : For logging
     this.subscription1 = this.observableStream1
       .pipe(
         tap(res => {
@@ -39,7 +39,7 @@ export class TapComponent implements OnInit {
           return this.arr[res];
         }),
         tap(res => {
-          console.log(res);
+          //console.log(res);
         })
       )
       .subscribe(res => {
@@ -47,19 +47,32 @@ export class TapComponent implements OnInit {
         this._designUtilityService.print(res, 'elContainer')
       })
 
-    // Ex 02 : Change color
-    this.subscription2 = this.observableStream2
+    // Ex 02 : For unsubscribing
+    // this.subscription2 = this.observableStream2
+    //   .pipe(
+    //     tap(res => {
+    //       if (res > 6) {
+    //         this.subscription2.unsubscribe();
+    //       }
+    //     }),
+    //     map(res => this.colors[res]))
+    //   .subscribe(res => {
+    //     this.currentColor = res;
+    //     this._designUtilityService.print(res, 'elContainer2')
+    //   })
+
+
+    this.subscription2 = interval(1000)
       .pipe(
-        tap(res => {
-          if (res > 6) {
-            this.subscription2.unsubscribe();
-          }
-        }),
-        map(res => this.colors[res]))
+        tap(res => res + 2),
+        map(res => console.log(res)
+        ))
       .subscribe(res => {
-        this.currentColor = res;
+        //this.currentColor = res;
         this._designUtilityService.print(res, 'elContainer2')
       })
+
+
   }
 
 }

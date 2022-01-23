@@ -25,38 +25,24 @@ export class DebounceComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    this.searchTerm = fromEvent(this.myInput1.nativeElement, 'keyup');
-    this.searchTerm
+
+
+    this.searchTerm2 = fromEvent(this.myInput2.nativeElement, 'keyup');
+    this.searchTerm2
       .pipe(
         map(event => event.target.value),
-        debounceTime(1000)
+        debounceTime(1000),
+        distinctUntilChanged()
       )
       .subscribe((res) => {
-        this.reqData = res;
+        this.reqData2 = res;
         this._loadingBarService.start()
         console.log(res);
         setTimeout(() => {
-          this.reqData = null;
+          this.reqData2 = null;
           this._loadingBarService.stop()
         }, 2000)
       })
-
-    // this.searchTerm2 = fromEvent(this.myInput2.nativeElement, 'keyup');
-    // this.searchTerm2
-    //   .pipe(
-    //     map(event => event.target.value),
-    //     debounceTime(1000),
-    //     distinctUntilChanged()
-    //   )
-    //   .subscribe((res) => {
-    //     this.reqData2 = res;
-    //     this._loadingBarService.start()
-    //     console.log(res);
-    //     setTimeout(() => {
-    //       this.reqData2 = null;
-    //       this._loadingBarService.stop()
-    //     }, 2000)
-    //   })
 
     const searchTerm2 = fromEvent<any>(this.myInput2.nativeElement, 'keyup').pipe(
       map(event => event.target.value),
