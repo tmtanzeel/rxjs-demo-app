@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DesignUtilityService } from 'src/app/appServices/design-utility.service';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,14 @@ export class HeaderComponent implements OnInit {
 
   navOpen: boolean = true;
 
-  constructor() { }
+  exclusive: boolean = false;
+
+  constructor(private _designUtilityService: DesignUtilityService) { }
 
   ngOnInit() {
+    this._designUtilityService.exclusive.subscribe(res => {
+      this.exclusive = res
+    })
   }
 
   onNavToggle() {
