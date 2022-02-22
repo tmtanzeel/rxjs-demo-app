@@ -28,7 +28,11 @@ import { ReplaySubjectComponent } from './observable/replay-subject/replay-subje
 import { AsyncComponent } from './observable/async/async.component';
 import { ConcatComponent } from './observable/concat/concat.component';
 import { MergeComponent } from './observable/merge/merge.component';
-import { MergemapComponent } from './mergemap/mergemap.component';
+import { MergemapComponent } from './observable/mergemap/mergemap.component';
+import { ConcatmapComponent } from './observable/concatmap/concatmap.component';
+import { SwitchmapComponent } from './observable/switchmap/switchmap.component';
+import { ExhaustMapComponent } from './observable/exhaust-map/exhaust-map.component';
+import { SharereplayComponent } from './observable/sharereplay/sharereplay.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +61,11 @@ import { MergemapComponent } from './mergemap/mergemap.component';
     AsyncComponent,
     ConcatComponent,
     MergeComponent,
-    MergemapComponent
+    MergemapComponent,
+    ConcatmapComponent,
+    SwitchmapComponent,
+    ExhaustMapComponent,
+    SharereplayComponent
   ],
   imports: [
     BrowserModule,
