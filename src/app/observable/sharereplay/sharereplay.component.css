@@ -1,0 +1,26 @@
+.all-products .card {
+    max-width: 22%;
+    margin: 0 14px 28px;
+}
+.card {
+    max-width: calc(50% - 30px);
+    margin: 0 15px 30px;
+}
+.card-body {
+    padding: 9px 15px;
+}
+.card .card-text {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+.card small {
+    font-weight: 500;
+    color: #9E9E9E;
+}
+
+
+
+.modal.fade.show {
+    display: block;
+    background: rgba(0, 0, 0, 0.27);
+}
